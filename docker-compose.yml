@@ -1,0 +1,11 @@
+version : '3.7'
+services:
+  app:
+    restart: always
+    image: app
+    build: .
+    command: bash -c "npx nodemon --watch . --exec \"npm start\""
+    volumes: 
+      - ./:/app
+    ports:
+      - "7788:4321"
